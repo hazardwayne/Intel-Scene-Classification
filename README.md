@@ -4,3 +4,10 @@ This is the solution of 6th place for [Intel Scene Classification Challenge](htt
 hard example mining, fine-tuning and ensemble. The whole model could be see in the below:
 
 ![alt text](model.PNG)
+
+## Methods and Notes
+
+* 5 fold CV is based on tensorflow 1.9. bBased on the CV results, we explore the hard examples from the training set for further attention.
+* Image augmentation is consists of [Augmentor](https://github.com/mdbloice/Augmentor) and [fastai vision.transforms](https://docs.fast.ai/vision.transform.html).
+* 7 different seeds of resnet101 is trained on fastai with oversampling of  the hard examples.
+* Voting performs bettter than weighting at the final ensemble stage.
